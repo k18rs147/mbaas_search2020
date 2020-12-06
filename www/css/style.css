@@ -38,7 +38,7 @@ input {
 }
 
 table {
-  border-collapse: collapse;
+  border-collapse: collapse; /*二重を改善*/
 }
 
 th, td {
