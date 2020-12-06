@@ -93,6 +93,18 @@
       }) 
     }
 
+    function searchLevelLT(){
+      let level = parseInt($("#level").val(), 10);
+      let TestDataClass = ncmb.DataStore(db);
+      TestDataClass
+      .lessThan("level",level)
+      .order("attack",false)
+      .fetchAll()
+      .then(function(results){
+        showResults(results);
+      }) 
+    }
+
     </script>
 </head>
 <body>
@@ -109,8 +121,8 @@
     <button class="btn" onclick="fetchAll()">Fetch All</button>
     <button class="btn" onclick="searchName()">Name</button>
     <br>
-    <button class="btn" onclick="searchLevel()">Level</button>
     <button class="btn" onclick="searchLevelLT()">Level &lt;</button>
+    <button class="btn" onclick="searchLevel()">Level</button>
   </div>
   <div id="message">initializing...</div>
 </body>
